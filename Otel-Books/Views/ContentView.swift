@@ -33,6 +33,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Attendance", systemImage: "calendar.badge.clock" )
                 }
+            SalaryDashboardView()
+                .tabItem {
+                    Label("Salary", systemImage: "indianrupeesign.circle" )
+                }
             EmployeeView(orgId: contentView.currentuserId)
                 .tabItem {
                     Label("Employee", systemImage: "person.3" )

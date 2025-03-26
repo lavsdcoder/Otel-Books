@@ -56,9 +56,9 @@ struct RegisterView: View {
 
                         
                     }
-                    .background(Color.white)
                     .scrollContentBackground(.hidden)
                 }
+                .padding()
                 
             }
             .ignoresSafeArea(.keyboard, edges: .bottom) // Moves content up

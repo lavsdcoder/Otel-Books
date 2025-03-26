@@ -138,7 +138,6 @@ struct AttendanceView: View {
                     
                 }
                 .padding(.vertical, 1)
-                .background(.white.opacity(0.75))
                 .navigationTitle("Attendance")
                 .toolbarBackground(.visible, for: .navigationBar)
                 .navigationBarTitleDisplayMode(.inline)

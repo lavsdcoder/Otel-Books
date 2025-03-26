@@ -53,7 +53,7 @@ struct LoginView: View {
                         .padding()
                         
                     }
-                    .background(Color.white)
+                   
                     .scrollContentBackground(.hidden)
                 }
                 .padding()

@@ -28,6 +28,7 @@ class AttendanceViewViewModel : ObservableObject{
     @Published  var numberFormatter: NumberFormatter = {
            let formatter = NumberFormatter()
            formatter.numberStyle = .none // Removes commas
+        formatter.usesGroupingSeparator = false // Prevents thousands separator
            return formatter
        }()
     

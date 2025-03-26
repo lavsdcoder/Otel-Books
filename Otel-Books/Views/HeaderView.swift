@@ -19,7 +19,7 @@ struct HeaderView: View {
                         .weight(.bold)
                 )
                 .multilineTextAlignment(.center)
-                .foregroundColor(.black)
+                .foregroundColor(.primary)
             
             Rectangle()
                 .foregroundColor(.clear)
@@ -38,7 +38,7 @@ struct HeaderView: View {
                         .weight(.bold)
                 )
                 .multilineTextAlignment(.center)
-                .foregroundColor(.black)
+                .foregroundColor(.primary)
                 .frame(width: 327, alignment: .top)
             
             Spacer()

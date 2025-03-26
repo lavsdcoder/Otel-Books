@@ -86,7 +86,6 @@ struct EmployeeView: View {
             }
             
             .padding(.vertical, 1)
-            .background(.white.opacity(0.75))
             .navigationTitle("Employee")
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)

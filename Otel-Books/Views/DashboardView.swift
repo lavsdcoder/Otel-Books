@@ -70,7 +70,8 @@ struct DashboardView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                                LazyHStack(spacing: 15) { // Spacing between cards
                                    ForEach(attView.attendanceViewArray) { employee in
-                                       EmployeeCard(employee: employee)
+                                       CardsView(employee: employee, 
+                                        isSalaryView: false)
                                    }
                                }
                                .padding(.horizontal, 16)
@@ -98,144 +99,7 @@ struct DashboardView: View {
     }
 
 
-struct EmployeeCard: View {
-    let employee: Attendance
-    @StateObject var attView = AttendanceViewViewModel()
-    var body: some View {
 
-        
-    
-        VStack(alignment: .leading, spacing: 0){
-           
-                HStack(alignment: .center, spacing: 0) {
-                    HStack{
-                        Rectangle()
-                            .foregroundColor(.clear)
-                            .frame(width: 42, height: 42)
-                            .background(
-                                Image(employee.gender == "Male" ? "MaleProfile" :
-                                        employee.gender == "Female" ? "FemaleProfile" : "defaultProfile" )
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 42, height: 42)
-                                    .clipped()
-                            )
-                        
-                        
-                    }
-                    Spacer()
-                    VStack{
-                        Text(employee.employee)
-                            .font(
-                                Font.custom("SF Pro", size: 17)
-                                    .weight(.semibold)
-                            )
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Text(employee.role)
-                            .font(Font.custom("SF Pro", size: 11))
-                            .kerning(0.06)
-                            .foregroundColor(.gray)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                    }
-                    
-                    
-                }
-                .padding(.horizontal, 16)
-                .padding(.vertical, 0)
-                .frame(maxWidth: .infinity, minHeight: 60, maxHeight: 60, alignment: .leading)
-                
-                Divider()
-                HStack(alignment: .center, spacing: 10){
-                    VStack{
-                        
-                        Text("\(attView.totalDays)")
-                            .font(
-                                Font.custom("SF Pro", size: 16)
-                                    .weight(.semibold)
-                            )
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.black)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                        
-                        Text("Working Days")
-                            .font(Font.custom("SF Pro", size: 11))
-                            .kerning(0.06)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.gray)
-                            .fixedSize(horizontal: true, vertical: false) // Prevents wrapping
-                        
-                        
-                        
-                    }
-                    VStack{
-                        
-                        Text(employee.present)
-                            .font(
-                                Font.custom("SF Pro", size: 16)
-                                    .weight(.semibold)
-                            )
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.black)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                        
-                        Text("Present")
-                            .font(Font.custom("SF Pro", size: 11))
-                            .kerning(0.06)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.gray)
-                            .fixedSize(horizontal: true, vertical: false) // Prevents wrapping
-                    }
-                    VStack{
-                        
-                        Text(employee.absent)
-                            .font(
-                                Font.custom("SF Pro", size: 16)
-                                    .weight(.semibold)
-                            )
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.black)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                        
-                        Text("Absent")
-                            .font(Font.custom("SF Pro", size: 11))
-                            .kerning(0.06)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.gray)
-                            .fixedSize(horizontal: true, vertical: false) // Prevents wrapping
-                    }
-                    VStack{
-                        
-                        Text(employee.halfDay)
-                            .font(
-                                Font.custom("SF Pro", size: 16)
-                                    .weight(.semibold)
-                            )
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.black)
-                            .frame(maxWidth: .infinity, alignment: .center)
-                        
-                        Text("Half Day")
-                            .font(Font.custom("SF Pro", size: 11))
-                            .kerning(0.06)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.gray)
-                            .fixedSize(horizontal: true, vertical: false) // Prevents wrapping
-                    }
-                }
-                
-                .padding(.vertical, 0)
-                .frame(maxWidth: .infinity, minHeight: 60, maxHeight: 60, alignment: .center)
-                
-                
-            
-        }
-        .padding()
-        .frame(width: 269, alignment: .topLeading)
-        .background(Color.white)
-        .cornerRadius(15)
-        .shadow(radius: 5)
-    }
-}
 
 
 #Preview {

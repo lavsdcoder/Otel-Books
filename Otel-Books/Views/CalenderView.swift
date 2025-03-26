@@ -76,7 +76,6 @@ struct CalenderView: View {
             }
         }
         .padding(.vertical, 1)
-        .background(.white.opacity(0.75))
         .navigationTitle(employeeName)
         .toolbarBackground(.visible, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)

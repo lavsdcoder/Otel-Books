@@ -92,7 +92,6 @@ struct MarkAttendanceView: View {
                 }
                 
                 .padding(.vertical, 1)
-                .background(.white.opacity(0.75))
                 .navigationTitle("Add Attendance")
                 .toolbarBackground(.visible, for: .navigationBar)
                 .navigationBarTitleDisplayMode(.inline)
